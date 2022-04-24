@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap');
+
 body,nav,button{
     font-family: 'open sans', sans-serif;
     }
@@ -42,7 +44,7 @@ body,nav,button{
     }
     /* header background */
 
-.main{
+#main{
 width: auto;
 height:960.14px;
  background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%); 
@@ -52,7 +54,8 @@ background-attachment: scroll;
 
 }
 
-.halaman2{
+/* Gameplay Options */
+#options{
 
     width: auto;
     height: 1051px;
@@ -66,7 +69,8 @@ background-attachment: scroll;
 
 }
 
-.halaman3{
+/* Game Feature */
+#feature{
 
     width: auto;
     height:960.14px;
@@ -80,7 +84,71 @@ background-attachment: scroll;
 
 }
 
-.halaman4{
+.accordion {
+  background-color: rgba(201, 123, 178, 0);
+  color: rgb(178, 202, 73);
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  margin-bottom: 0.5rem;
+}
+
+.accordion .icon {
+  margin-right: 1rem;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(127, 255, 212, 0);
+  border: 1px solid antiquewhite;
+  border-radius: 50%;
+  float: left;
+  transition: all .5s ease-in;
+}
+
+.panel {
+  padding: 0 1rem;
+  display: none;
+  overflow: hidden;
+  transition: all .5 ease-in;
+}
+
+.panel p {
+  border-left: 1px solid antiquewhite;
+  margin: 0px;
+  padding: 0.7rem;
+  transition: all .5 ease-in;
+}
+
+.panel :hover {
+
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.336), rgba(0, 0, 0, 0));
+}
+
+.active-accordion {
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 0;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(127, 255, 212, 0);
+  border: 1px solid antiquewhite;
+  border-radius: 50%;
+
+  transition: all .5s ease-in;
+}
+
+.active-accordion h5 {
+  width: 80vw;
+}
+
+.active-accordion .icon {
+  background-color: antiquewhite;
+}
+
+/* System Req */
+#system{
 
     width: auto;
     height:960.14px;
@@ -94,7 +162,8 @@ background-attachment: scroll;
 
 }
 
-.halaman5{
+/* Top Score */
+#score{
 
     width: auto;
     height:960.14px;
@@ -108,18 +177,8 @@ background-attachment: scroll;
 
 }
 
-/* .card{
-
-    left: 60.26%;
-    right: 8.31%;
-    top: 16.58%;
-    bottom: 64.37%;
-    
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
-} */
-
-.halaman6{
+/* Footer */
+#footer{
 
     width: auto;
     height:960.14px;
@@ -132,6 +191,8 @@ background-attachment: scroll;
     background-attachment: scroll;
 
 }
+
+
 .col-sm-10 span{
     padding-left: 6%;
     text-align: end;
@@ -293,4 +354,8 @@ a{
     font-size: 1rem;
     outline: none;
     /* color: rgb(231, 221, 221); */
+}
+
+@media screen and (max-width: 780px) {
+    
 }
