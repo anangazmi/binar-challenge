@@ -57,7 +57,7 @@ h3 {
     width: auto;
     height: 960.14px;
     background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%);
-    background: url('assets/main-bg.jpg') no-repeat center center fixed;
+    background: url('assets/img/main-bg.jpg') no-repeat center center fixed;
     background-size: cover;
     background-attachment: scroll;
 
@@ -71,7 +71,7 @@ h3 {
     left: -1.55px;
     top: 0.11px;
     background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%);
-    background: url('assets/the-games-bg.jpg') no-repeat center center fixed;
+    background: url('assets/img/the-games-bg.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     background-attachment: scroll;
@@ -86,7 +86,7 @@ h3 {
     left: -1.55px;
     top: 0.11px;
     background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%);
-    background: url('assets/features.jpg') no-repeat center center fixed;
+    background: url('assets/img/features.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     background-attachment: scroll;
@@ -164,7 +164,7 @@ h3 {
     left: -1.55px;
     top: 0.11px;
     background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%);
-    background: url('assets/requirements.png') no-repeat center center fixed;
+    background: url('assets/img/requirements.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
     background-attachment: scroll;
@@ -179,7 +179,7 @@ h3 {
     left: -1.55px;
     top: 0.11px;
     background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%);
-    background: url('assets/top-score-bg.png') no-repeat center center fixed;
+    background: url('assets/img/top-score-bg.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
     background-attachment: scroll;
