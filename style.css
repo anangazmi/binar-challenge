@@ -107,3 +107,17 @@ background-attachment: scroll;
     background-attachment: scroll;
 
 }
+
+.halaman6{
+
+    width: auto;
+    height:960.14px;
+    left: -1.55px;
+    top: 0.11px;
+     background-color: #080A0B;
+    /* background: url('assets/top-score-bg.png') no-repeat center center fixed; */
+    background-size: cover; 
+    color: white;
+    background-attachment: scroll;
+
+}
