@@ -26,3 +26,17 @@ class Player_1 extends Player {
     this.gunting[0].id = "gunting-player";
   }
 }
+
+// Polymorphism
+class Player_2 extends Computer(Player) {
+  constructor(batu, kertas, gunting) {
+    super(batu, kertas, gunting);
+    this.#initiation();
+  }
+
+  #initiation() {
+    this.batu[1].id = "batu-com";
+    this.kertas[1].id = "kertas-com";
+    this.gunting[1].id = "gunting-com";
+  }
+}
