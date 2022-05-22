@@ -189,3 +189,18 @@ nav {
 .reset button:hover {
   animation: rotate 1s normal;
 }
+
+@keyframes rotate {
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes wave {
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
