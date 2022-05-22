@@ -239,3 +239,6 @@ class Game extends Rules {
     this.setPlayerListener();
   }
 }
+
+const game = new Game();
+game.play();
