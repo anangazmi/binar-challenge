@@ -40,3 +40,70 @@ class Player_2 extends Computer(Player) {
     this.gunting[1].id = "gunting-com";
   }
 }
+
+class Rules {
+  constructor() {
+    this.resultText = document.createElement("H1");
+    this.resultContainer = document.getElementById("vs_result");
+    this.user_choice;
+    this.com_choice;
+  }
+
+  logger = (text) => {
+    console.log("----------");
+    console.log(text);
+  };
+
+  _defaultState = () => {
+    this.resultContainer.classList.remove("draw");
+    this.resultContainer.classList.remove("versus_result");
+    this.resultText.innerHTML = "VS";
+    this.resultContainer.appendChild(this.resultText);
+  };
+
+  _winResult = () => {
+    this.resultContainer.classList.remove("draw");
+    this.resultContainer.classList.add("versus_result");
+    this.resultText.innerHTML = "PLAYER WIN";
+    this.resultContainer.appendChild(this.resultText);
+    this.logger("Result : PLAYER Win, great ! :)");
+  };
+
+  _loseResult = () => {
+    this.resultContainer.classList.remove("draw");
+    this.resultContainer.classList.add("versus_result");
+    this.resultText.innerHTML = "COM WIN";
+    this.resultContainer.appendChild(this.resultText);
+    this.logger("Result : COM Win, YOU lose :(");
+  };
+
+  _drawResult = () => {
+    this.resultContainer.classList.add("versus_result");
+    this.resultContainer.classList.add("draw");
+    this.resultText.innerHTML = "DRAW";
+    this.resultContainer.appendChild(this.resultText);
+    this.logger("Result : Draw, GG !");
+  };
+
+  decision = (userChoice, botChoice) => {
+    if (
+      (userChoice === "batu" && botChoice === "batu") ||
+      (userChoice === "kertas" && botChoice === "kertas") ||
+      (userChoice === "gunting" && botChoice === "gunting")
+    ) {
+      return this._drawResult();
+    } else if (
+      (userChoice === "batu" && botChoice === "gunting") ||
+      (userChoice === "kertas" && botChoice === "batu") ||
+      (userChoice === "gunting" && botChoice === "kertas")
+    ) {
+      return this._winResult();
+    } else if (
+      (userChoice === "batu" && botChoice === "kertas") ||
+      (userChoice === "kertas" && botChoice === "gunting") ||
+      (userChoice === "gunting" && botChoice === "batu")
+    ) {
+      return this._loseResult();
+    }
+  };
+}
