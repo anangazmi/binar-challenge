@@ -1,207 +1,378 @@
-/* Global Styling */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap');
 
-:root {
-  --nav: rgba(249, 178, 61, 1);
-  --bg: rgba(156, 131, 95, 1);
-  --btn-hover: rgba(196, 196, 196, 1);
-  --skin: rgb(249, 211, 186);
-  --black: rgba(51, 44, 43, 1);
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: bold;
-  margin: 0;
+body,
+nav,
+button {
+    font-family: 'open sans', sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  background-color: var(--bg);
-  display: flex;
-  flex-direction: column;
-  font-size: 4rem;
-}
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    /* background: url('assets/main-bg.jpg') no-repeat center center fixed;
+        background-size: cover; */
 
-img {
-  width: 100%;
-  height: auto;
-}
 
-nav,
-.title {
-  display: flex;
-  align-items: center;
 }
 
 nav {
-  margin: 1rem;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: -0.03%;
+    bottom: 90.66%;
+
+    background: rgba(0, 0, 0, 0.5);
+
 }
 
-.title div {
-  margin: 0 1rem;
+h3,
+h2,
+h1 {
+    font-family: 'bebas neue', cursive;
+    color: white;
+
 }
 
-.back_button a {
-  text-decoration: none;
+h1 {
+    font-weight: bold;
+    font-size: 80px;
 }
 
-.back_button h2 {
-  font-size: 1em;
-  line-height: 98px;
-  letter-spacing: 0.1em;
-  color: rgba(114, 76, 33, 1);
+h2 {
+    font-weight: bold;
+    font-size: 36px;
 }
 
-.title_text h1 {
-  font-size: 0.5em;
-  line-height: 49px;
-  text-align: center;
-  color: var(--nav);
-  text-shadow: 2px 1px #000000;
+h3 {
+    font-weight: bold;
+    font-size: 24px;
 }
 
-.title_logo {
-  display: flex;
-  width: 5rem;
+/* header background */
+
+#main {
+    width: auto;
+    height: 960.14px;
+    background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%);
+    background: url('/src/assets/images/main-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: scroll;
+
 }
 
-.main {
-  position: relative;
-  height: 75vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+/* Gameplay Options */
+#options {
+
+    width: auto;
+    height: 1051px;
+    left: -1.55px;
+    top: 0.11px;
+    background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%);
+    background: url('/src/assets/images/the-games-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    background-attachment: scroll;
+
 }
 
-.player {
-  align-self: center;
-  width: 100%;
-  min-width: 5rem;
+/* Game Feature */
+#feature {
+
+    width: auto;
+    height: 960.14px;
+    left: -1.55px;
+    top: 0.11px;
+    background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%);
+    background: url('/src/assets/images/features.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    background-attachment: scroll;
+
 }
 
-.user_choice {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  row-gap: 0.5rem;
-  justify-content: center;
+.accordion {
+    background-color: rgba(201, 123, 178, 0);
+    color: rgb(178, 202, 73);
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom: 0.5rem;
 }
 
-.user_choice button {
-  background: unset;
-  border: unset;
-  max-width: 9rem;
-  width: 100%;
-  min-width: 4rem;
-  padding: 1rem 1rem;
-  border-radius: 10%;
+.accordion .icon {
+    margin-right: 1rem;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(127, 255, 212, 0);
+    border: 1px solid antiquewhite;
+    border-radius: 50%;
+    float: left;
+    transition: all .5s ease-in;
 }
 
-.player:nth-child(1) button:hover {
-  background-color: var(--skin);
+.panel {
+    padding: 0 1rem;
+    display: none;
+    overflow: hidden;
+    transition: all .5 ease-in;
 }
 
-.player button:enabled {
-  animation: wave 1s;
+.panel p {
+    border-left: 1px solid antiquewhite;
+    margin: 0px;
+    padding: 0.7rem;
+    transition: all .5 ease-in;
 }
 
-.player:nth-child(3) button {
-  cursor: default;
+.panel :hover {
+
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.336), rgba(0, 0, 0, 0));
 }
 
-.player:nth-child(1) button:active,
-.reset button:active {
-  transform: translate(0, 5px);
+.active-accordion {
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(127, 255, 212, 0);
+    border: 1px solid antiquewhite;
+    border-radius: 50%;
+
+    transition: all .5s ease-in;
 }
 
-.active_choice {
-  background-color: var(--btn-hover) !important;
+.active-accordion h5 {
+    width: 80vw;
 }
 
-.user_title {
-  text-align: center;
-  padding: 1rem;
+.active-accordion .icon {
+    background-color: antiquewhite;
 }
 
-.user_title h2 {
-  font-size: 0.5em;
-  line-height: 49px;
-  text-align: center;
-  letter-spacing: 0.1em;
-  color: var(--black);
-  border-bottom: 0.5rem dashed var(--skin);
+/* System Req */
+#system {
+
+    width: auto;
+    height: 960.14px;
+    left: -1.55px;
+    top: 0.11px;
+    background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%);
+    background: url('/src/assets/images/requirements.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    background-attachment: scroll;
+
 }
 
-.versus {
-  max-width: 15rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
-  z-index: 99;
+/* Top Score */
+#score {
+
+    width: auto;
+    height: 960.14px;
+    left: -1.55px;
+    top: 0.11px;
+    background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090A 99.74%);
+    background: url('/src/assets/images/top-score-bg.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    background-attachment: scroll;
+
 }
 
-.versus > h1 {
-  color: rgba(189, 0, 0, 1);
-  font-size: 1.5em;
-  text-align: center;
-  padding: 0 0.5rem;
+/* Footer */
+#footer {
+
+    width: auto;
+    height: 960.14px;
+    left: -1.55px;
+    top: 0.11px;
+    background-color: #080A0B;
+    /* background: url('assets/top-score-bg.png') no-repeat center center fixed; */
+    background-size: cover;
+    color: white;
+    background-attachment: scroll;
+
 }
 
-.versus_result {
-  background-color: rgba(76, 150, 84, 1);
-  border-radius: 10px;
-  height: 10rem;
-  transform: rotate(-28.87deg);
+
+.col-sm-10 span {
+    padding-left: 6%;
+    text-align: end;
+    font-size: 12px;
+    text-align: end;
+
 }
 
-.versus_result h1 {
-  margin: auto;
-  color: white;
-  font-size: 38px;
-  line-height: 52px;
-  text-align: center;
-  letter-spacing: 0.1em;
+a {
+    text-decoration: none;
+    color: white;
 }
 
-.draw {
-  background-color: rgb(3, 91, 12);
+/* nav a:hover{
+    color: yellow;
+} */
+
+.navigation-bar a:hover {
+    color: #e74c3c;
 }
 
-.reset {
-  position: absolute;
-  bottom: 25px;
-  left: 0;
-  right: 0;
-  display: flex;
+#navbarNav ul li a::before {
+    content: "";
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    color: gold;
+    background-color: gold;
 }
 
-.reset button {
-  margin: auto;
-  padding: 0;
-  display: flex;
-  background: unset;
-  border: unset;
-  width: 5rem;
+#navbarNav a:hover::before {
+    right: 0;
+    left: 0;
 }
 
-.reset button:hover {
-  animation: rotate 1s normal;
+#logo:hover {
+
+    color: hsl(51, 100%, 50%);
+
 }
 
-@keyframes rotate {
-  50% {
-    transform: rotate(180deg);
-  }
+
+#btn1 {
+    box-shadow: inset 0 0 0 0 #d3f41c;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+
 }
 
-@keyframes wave {
-  25% {
-    transform: rotate(10deg);
-  }
-  75% {
-    transform: rotate(-10deg);
-  }
+#btn1:hover {
+    box-shadow: inset 300px 0 0 0 hsl(51, 100%, 50%);
+    transition: ease-out 0.4s;
+    font-size: 2rem;
+    outline: none;
+    color: white;
 }
+
+#btn2 {
+    box-shadow: inset 0 0 0 0 #d3f41c;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+
+}
+
+#btn2:hover {
+    box-shadow: inset 300px 0 0 0 hsl(51, 100%, 50%);
+    transition: ease-out 0.4s;
+    font-size: 2rem;
+    outline: none;
+    color: white;
+}
+
+#btn3 {
+    box-shadow: inset 0 0 0 0 #d3f41c;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+
+}
+
+#btn3:hover {
+    box-shadow: inset 300px 0 0 0 hsl(51, 100%, 50%);
+    transition: ease-out 0.4s;
+    font-size: 2rem;
+    outline: none;
+    color: white;
+}
+
+#g1 {
+    box-shadow: inset 0 0 0 0 #d3f41c;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+
+}
+
+#g1:hover {
+    box-shadow: 0 0 0 0;
+    transition: ease-out 0.4s;
+    font-size: 1rem;
+    outline: none;
+    /* color: rgb(231, 221, 221); */
+}
+
+#g1 {
+    box-shadow: inset 0 0 0 0 #d3f41c;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+
+}
+
+#g1:hover {
+    box-shadow: 0 0 0 0;
+    transition: ease-out 0.4s;
+    font-size: 1rem;
+    outline: none;
+    /* color: rgb(231, 221, 221); */
+}
+
+#g2 {
+    box-shadow: inset 0 0 0 0 #d3f41c;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+
+}
+
+#g2:hover {
+    box-shadow: 0 0 0 0;
+    transition: ease-out 0.4s;
+    font-size: 1rem;
+    outline: none;
+    /* color: rgb(231, 221, 221); */
+}
+
+#g3 {
+    box-shadow: inset 0 0 0 0 #d3f41c;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+
+}
+
+#g3:hover {
+    box-shadow: 0 0 0 0;
+    transition: ease-out 0.4s;
+    font-size: 1rem;
+    outline: none;
+    /* color: rgb(231, 221, 221); */
+}
+
+#g4 {
+    box-shadow: inset 0 0 0 0 #d3f41c;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+
+}
+
+#g4:hover {
+    box-shadow: 0 0 0 0;
+    transition: ease-out 0.4s;
+    font-size: 1rem;
+    outline: none;
+    /* color: rgb(231, 221, 221); */
+}
+
+@media screen and (max-width: 780px) {}
