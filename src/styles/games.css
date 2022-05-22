@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap");
+
+:root {
+  --nav: rgba(249, 178, 61, 1);
+  --bg: rgba(156, 131, 95, 1);
+  --btn-hover: rgba(196, 196, 196, 1);
+  --skin: rgb(249, 211, 186);
+  --black: rgba(51, 44, 43, 1);
+}
+
+nav {
+  margin: 1rem;
+}
+
+.title div {
+  margin: 0 1rem;
+}
+
+.back_button a {
+  text-decoration: none;
+}
+
+.back_button h2 {
+  font-size: 1em;
+  line-height: 98px;
+  letter-spacing: 0.1em;
+  color: rgba(114, 76, 33, 1);
+}
+
+.title_text h1 {
+  font-size: 0.5em;
+  line-height: 49px;
+  text-align: center;
+  color: var(--nav);
+  text-shadow: 2px 1px #000000;
+}
+
+.title_logo {
+  display: flex;
+  width: 5rem;
+}
