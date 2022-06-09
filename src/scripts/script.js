@@ -108,6 +108,15 @@ class Rules {
   };
 }
 
+// for (var index = 0; index < arr.length; index = index + 1) {
+//   //index = 1
+//   console.log({
+//     length: arr.length,
+//     index: index,
+//     value: arr[index],
+//   });
+// }
+
 class Game extends Rules {
   constructor(user_choice, com_choice) {
     super(user_choice, com_choice);
