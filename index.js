@@ -1,15 +1,35 @@
-const express = require('express')
-const app = express()
-const path = require('path')
-const routes = require('./controllers/routes')
-const middleware = require('./utils/middleware')
-const PORT = 5000
+// import and initiate express
+const express = require('express');
+const app = express();
 
-app.use(express.json())
-app.use(express.static(path.join(__dirname, 'public/static')))
-app.use('/', routes)
-app.use(middleware)
+// import dotenv
+require('dotenv').config();
 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`)
-})
+// import middleware
+const errorMiddleware = require('./middlewares/error');
+const notFoundMiddleware = require('./middlewares/notfound');
+
+// applying static middlewares
+app.use(express.static('public'));
+
+// applying body reader middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+
+// import router
+const router = require('./router.js');
+
+// applying ejs view engine
+app.set('view engine', 'ejs');
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server successfully now running on PORT ${process.env.PORT}`); 
+});
+
+app.use(router);
+
+// applying error & not found middleware
+app.use(errorMiddleware);
+app.use(notFoundMiddleware);
+
