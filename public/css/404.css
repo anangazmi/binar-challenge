@@ -16,23 +16,22 @@ html {
   margin-bottom: auto;
 }
 
-.loginForm {
+.custom404 {
   background-image: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(10%, transparent), color-stop(90%, transparent), to(black)), url(/images/index/newsletter-bg.jpg);
   background-image: linear-gradient(black 0%, transparent 10%, transparent 90%, black 100%), url(/images/index/newsletter-bg.jpg);
 }
 
-.loginForm .errorLog {
-  background-color: red;
-  opacity: 0.5;
-  color: black;
+.custom404 h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
-.loginForm label {
-  font-size: 24px;
-}
-
-.loginForm .signup {
-  font-size: 14px;
+.custom404 a {
+  padding: 9px;
+  font-weight: bold;
 }
 
 .footer p {
@@ -40,8 +39,9 @@ html {
   color: grey;
 }
 
+
 @media (min-width: 992px) {
-  .loginForm h1 {
+  .custom404 h1 {
     font-size: 44px;
   }
 }

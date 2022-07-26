@@ -16,23 +16,19 @@ html {
   margin-bottom: auto;
 }
 
-.loginForm {
+.signupForm {
   background-image: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(10%, transparent), color-stop(90%, transparent), to(black)), url(/images/index/newsletter-bg.jpg);
   background-image: linear-gradient(black 0%, transparent 10%, transparent 90%, black 100%), url(/images/index/newsletter-bg.jpg);
 }
 
-.loginForm .errorLog {
+.signupForm .errorLog {
   background-color: red;
   opacity: 0.5;
   color: black;
 }
 
-.loginForm label {
+.signupForm label{
   font-size: 24px;
-}
-
-.loginForm .signup {
-  font-size: 14px;
 }
 
 .footer p {
@@ -41,7 +37,7 @@ html {
 }
 
 @media (min-width: 992px) {
-  .loginForm h1 {
+  .signupForm h1 {
     font-size: 44px;
   }
 }
