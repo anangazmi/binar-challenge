@@ -1,24 +1,10 @@
-import express from 'express';
-import auth from '../middlewares/authentication';
-import apiRouter from './apiRoutes';
-import viewRoutes from './viewRoutes';
-import controller from '../controllers/ViewController/controller';
+const apiRouter = require("express").Router();
+const v1 = require("./v1");
 
-const router = express.Router();
-
-// Homepage router
-router.get('/', [auth.verifyLogin], controller.index);
-router.get('/index', (req, res) => {
-  res.redirect('/');
-});
-router.get('/home', (req, res) => {
-  res.redirect('/');
+apiRouter.get("/", (req, res) => {
+  res.send("test");
 });
 
-router.use(viewRoutes);
-router.use('/api', apiRouter);
+apiRouter.use("/v1", v1);
 
-// 404 Page
-router.use(controller.pageNotFound);
-
-export default router;
+module.exports = apiRouter;

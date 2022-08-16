@@ -1,62 +1,64 @@
-# binar-challengech7
+# Binar Academy Bootcamp - FSW - Chapter 8 - Challenge
 
-**Binar Academy Full Stack Web Development Challenge Chapter 7 - Auth & Multiplayer**
+Ini adalah repository RESTful API yang menjadi basis untuk teman-teman berkreasi di challenge chapter 8. Ikuti petunjuk di bawah dengan seksama untuk memastikan teman-teman dapat menjalankan RESTful API.
 
-**Postman Documentation** : [Click here](https://documenter.getpostman.com/view/13057273/TVspmA4x) or **_https://documenter.getpostman.com/view/13057273/TVspmA4x_**
+## Prasyarat
+Sebelum memulai menyentuh repository, pastikan komputer teman-teman memenuhi prasyarat berikut:
+- sudah install Node.js & NPM
+- sudah install PostgreSQL
+- sudah install git
 
-### Step-by-step to run the app
+## Project setup
+1. Fork repository ini. Ada tombol 'fork' di kanan atas atau klik https://github.com/berbinarbinar/binar-challenge-chapter-8.git. Lalu fork dan nanti akan muncul repository yang sama persis di akun teman-teman.
+2. Clone repository teman-teman yang sudah di fork 
 
-1. Clone the repository.
-2. Run in terminal : `npm install` to install all required packages that listed in **_packages.json_**.
-3. Make database in pgAdmin.
-4. Make your own **_.env_** environment file based on **_.env.example_**. Make sure the database name is right. Also specify the session name & secret for cookies.
-5. Migrate database tables and populate seeders.
-6. Run **Server** in terminal using : `npm run start` or `yarn start`.
+```
+$ git clone https://github.com/[username_kalian]/binar-challenge-chapter-8.git
+```
 
-### STEP-BY-STEP to Test middlewares & controllers (for example, I will use port 3000)
-1. Go to index page, you can enter `localhost:3000/` or `localhost:3000/index` or `localhost:3000/home`. The result will be the same, index page.
-2. You're not logged in yet, so you couldn't access private routes. Try to access `localhost:3000/profile` or play the game by clicking **PLAY NOW** button on index page. The server will redirect you to login page (`localhost:3000/auth/login`).
-3. If you have not registered yet, you can register first by clicking **SIGN UP** button (`localhost:3000/auth/signup`) in the top right side
-4. Test the basic form validation. You can find the requirement to fill the form inside middlewares > validation folder. If all conditions are not met, the server will return an error message.
-5. If the Sign up/registration is successful, check new user entry in db. Also see that the given password has been hashed by bcrypt.
-6. Try to login with any credentials from seeder or your own registered account. You also can test the basic form validation here. Also because server use bcrypt, server will compare the inputed password with the hashed one from db. If the login is succesful, you will be redirected by server to index page again. Now see that in the top right side that the navbar menu has changed.
-7. Now you are logged in, so you can't access `localhost:3000/auth/signup` or `localhost:3000/auth/login` anymore. Try to test it from browser URL. If you try to access them, you will be directed to index page.
-8. When you logged in, server will give you cookies and session that expires for 2 hours. This cookies required to authenticate user login. If the cookies expired or deleted, user need to login again.
-9. Click **LOGGED IN AS username** in right side of navbar to go to your profile. This is your profile biodata. You can edit profile, change password or delete all user data.
-10. Now try to edit profile first by clicking **EDIT PROFILE** button. Here, all form fields are not set as required field. So you can edit 1 or 2 things, or even nothing. But, some validation still works here. If you're done, click **SUBMIT** button. If you leave the form without filling any fields, the submit won't change any data. Email and username can't be changed. Once used, you need another to do another registration. You will be redirected to profile page after click the **SUBMIT** button. See if any of your profile data has changed.
-11. Now try to change your password by clicking **CHANGE PASSWORD** button in profile page. Try the validation again. You can't use old password as your new password. Again, bcrypt will do their task to compare and hash the password.
-12. Now go back to index page or just jump into game page by enter `localhost:3000/game`. You can see that you are playing against com. Try to play some games. The **REFRESH** button on the bottom also acts as the trigger to post game history.
-13. After some games, you could check your game history by clicking **SEE GAME HISTORY** button on the top right side of game page. The list of your userGameHistories table from database will be sorted from newest to oldest by timestamps. In the right side, you can click &#10060; button to delete the specific game history.
-14. If you're done, go back to your profile and now try delete all user data by clicking **DELETE ALL USER DATA** button. You will be logged out (this is the same thing will be happen if you click **LOG OUT** button in navbar, but without delete the data). Your cookies and session will also be destroyed after Log out or delete all user data. Check the database that all data that associated to the user also gone (game histories and user biodata/profile).
+3. Pindah ke folder repository yang udah di clone dgn perintah 
+`cd binar-challenge-chapter-8`
+4.  Install dependencies dgn command `npm install`
+5.   Pastikan sudah membuat database sesuai konfigurasi di `/config/config.js` jika belum jalankan saja `npx sequelize db:create` dan juga pastikan kita harus berada pada directory `server` kalau belum `cd server`
+6.   Lanjutkan dengan menjalankan migrasi, sebelumnya kita harus masuk pada directory `server` dulu ya, `npx sequelize db:migrate`
+7.   Kamu juga bisa jalankan file seed yang sudah dibuat dengan cara `npx sequelize db:seed:all`
+### Run
+Untuk menjalankan aplikasi RESTful API, cukup jalankan perintah berikut
+```
+$ npm run start
+```
 
-### Packages used :
+## Tasks
+Jika teman-teman sudah berhasil menjalankan aplikasi RESTful API dari repository ini, teman-teman perlu melakukan dua hal:
+1. Membuat dokumentasi API dengan Swagger
+    - [ ] Baca code repository RESTful API ini baik-baik
+    - [ ] Buat dokumentasi untuk semua endpoint yang terdaftar di router
+    - [ ] Dokumentasi melingkupi : 
+        - [ ] HTTP method
+        - [ ] URL
+        - [ ] URL parameter (jika ada)
+        - [ ] Query parameter (jika ada)
+        - [ ] Request body (jika ada)
+        - [ ] format response
+    - [ ] Pasang dokumentasi Swagger dalam satu routing
+2. Membuat client-side application dengan React.js
+    - [ ] Buat folder baru, misalkan /client, kemudian buat project baru dalam folder tersebut dengan `$ npm init -y` atau `$ npx create-react-app client`
+    - [ ] Buat tampilan/UI untuk fitur berikut :
+        - [ ] Form untuk membuat player baru, dengan tombol Submit
+        - [ ] Form untuk mengedit player, dengan tombol Submit
+        - [ ] Form untuk pencarian player berdasarkan 4 kriteria pencarian : username, email, experience, dan lvl. jangan lupa juga tombol submit.
+    - [ ] Kita belum belajar mengintegrasikan back-end dan front-end. Jadi untuk challenge ini, ketika di klik tombol submit tampilkan semua input sebagai satu elemen HTML baru
+        - [ ] Untuk form membuat atau edit player, tampilkan info username, email, dll setelah di klik submit. 
+        - [ ] Untuk form mencari player, tampilkan ulang input kriteria username, email, experience, dan lvl.
+    - [ ] Jalankan sebagai aplikasi client-side (npm run start di folder client (buat run react app))
 
-- bcrypt : Password hashing
-- cookie-parser : Populate req.cookies
-- dotenv : Environment
-- ejs : View Engine
-- express : Node.js Framework
-- helmet : Secure HTTP headers
-- joi : Form Validation
-- jsonwebtoken : JWT for authentication
-- method-override : Override POST method in form
-- morgan : Logger (see the log on node console)
-- node-fetch : window.fetch inside node.js
-- pg : PostgreSQL client
-- sequelize : Sequelize ORM
-- Babel.js : Transcompiler
-- ESLint : Linter - airbnb based
-- nodemon
-- sequelize-cli : Sequelize Command Line Interface (CLI)
+## Caveats / Batasan
+- Tugas nomor 1 dan 2 dibuat dalam repository yang sama dengan repository RESTful API. Dengan kata lain, teman-teman bertugas mengembangkan repository RESTful API ini menjadi repository full-stack (RESTful API + client-side + documentation)
+- Code existing yang ada dalam folder /app tidak boleh diubah/dihapus, kecuali bagian config db. Yang diperbolehkan hanya penambahan line untuk memenuhi challenge. 
+- Jika teman-teman menemukan error/bug dalam code, silakan buat issue di repository ini atau sampaikan ke tim Binar Academy
+- Pastikan folder node_modules masuk dalam .gitignore, baik untuk RESTful API maupun client-side.
+- Nantinya, aplikasi RESTful API dan client-side akan berjalan sebagai 2 aplikasi berbeda. Pastikan keduanya bisa berjalan berbarengan tanpa ada issue.
 
-### Folders :
-
-- public -> Serve static files (css, images, js, etc).
-- configs -> config file(s).
-- controllers -> controllers for user interactions.
-- middlewares -> JWT authentication, admin role authentication & joi validation.
-- migrations -> migration for db tables.
-- models -> model mapping.
-- routes -> web routes.
-- seeders -> populate dummy data into migrated db tables.
-- views -> act as views in MVC pattern using EJS.
+## Petunjuk Submission
+- Challenge di submit paling lambat hari Senin di minggu ketiga chapter 8, pukul 23:59 WIB.
+- metode submission: kirim email ke mentor dan bagian akademik Binar, berisi link repository teman-teman (yang di fork) di Gitlab.
